@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NISM Series XVI Mock Tests | Commodity Derivatives</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">XVI</div>
+        <div>
+          <h1>NISM Series XVI Mock Lab</h1>
+          <p>Commodity Derivatives Certification Examination</p>
+        </div>
+      </div>
+      <div id="headerActions"></div>
+    </header>
+
+    <section id="homeView">
+      <div class="hero">
+        <h2>Choose a 100-question mock set</h2>
+        <p>
+          Five full-length papers covering every workbook chapter, including the numericals that appear in the exam:
+          futures P/L, tick value, cost of carry, fair value, basis, option values, breakevens, hedge ratio, arbitrage/spreads, index and margin calculations.
+        </p>
+        <div class="rules">
+          <div class="rule"><b>100</b><span>Questions × 1 mark</span></div>
+          <div class="rule"><b>−0.25</b><span>Negative mark for each wrong answer</span></div>
+          <div class="rule"><b>60</b><span>Passing score out of 100</span></div>
+          <div class="rule"><b>120 min</b><span>Official exam duration</span></div>
+        </div>
+      </div>
+      <div class="sets" id="setGrid"></div>
+    </section>
+
+    <section id="examView" class="hidden">
+      <div class="exam-top">
+        <div class="pill">Set <strong id="examSet"></strong></div>
+        <div class="pill">Q <strong id="examQNo"></strong> / 100</div>
+        <div class="pill timer" id="examTimer">02:00:00</div>
+        <div class="pill">Keys 1–4 answer · N next · P previous</div>
+        <button class="btn-danger" id="submitBtn">Submit test</button>
+      </div>
+      <div class="exam-grid">
+        <div class="q-card" id="questionCard"></div>
+        <aside class="palette">
+          <h4>Question map</h4>
+          <div class="q-map" id="qMap"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="resultView" class="hidden"></section>
+  </div>
+
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
