@@ -6,16 +6,36 @@ const SET_META = [
   { id: 5, title: "Set 5", blurb: "Full-syllabus revision paper with extra application numericals." }
 ];
 
-const DURATION_SEC = 120 * 60;
-const PASS_MARK = 60;
+const REAL_META = [
+  { id: 1, title: "Real Set 1", blurb: "50 questions transcribed from the first sample recording." },
+  { id: 2, title: "Real Set 2", blurb: "50 questions transcribed from the second sample recording." },
+  { id: 3, title: "Real Set 3", blurb: "Questions transcribed from the third sample recording." },
+  { id: 4, title: "Real Set 4", blurb: "50 questions transcribed from the fourth sample recording." },
+  { id: 5, title: "Real Set 5", blurb: "50 questions transcribed from the fifth sample recording." }
+];
+
+const REAL_BANKS = {
+  1: () => window.SET_01_VIDEO,
+  2: () => window.SET_02_VIDEO,
+  3: () => window.SET_03_VIDEO,
+  4: () => window.SET_04_VIDEO,
+  5: () => window.SET_05_VIDEO
+};
+
+const MOCK_DURATION_SEC = 120 * 60;
+const REAL_DURATION_SEC = 60 * 60;
+const PASS_RATIO = 0.6;
 
 const state = {
   view: "home",
+  mode: "mock",
   setId: null,
   questions: [],
   answers: [],
   current: 0,
-  remaining: DURATION_SEC,
+  remaining: MOCK_DURATION_SEC,
+  duration: MOCK_DURATION_SEC,
+  passMark: 60,
   timerId: null,
   submitted: false
 };
@@ -35,28 +55,44 @@ function renderHome() {
   $("resultView").classList.add("hidden");
   $("headerActions").innerHTML = "";
   $("setGrid").innerHTML = SET_META.map(s => `
-    <article class="card set-card" data-set="${s.id}">
+    <article class="card set-card" data-mode="mock" data-set="${s.id}">
       <h3>${s.title}</h3>
       <p>${s.blurb}</p>
       <div class="set-meta"><span>100 MCQs</span><span>Start mock →</span></div>
     </article>
   `).join("");
+  $("realGrid").innerHTML = REAL_META.map(s => {
+    const count = (REAL_BANKS[s.id]() || []).length;
+    return `
+      <article class="card set-card" data-mode="real" data-set="${s.id}">
+        <h3>${s.title}</h3>
+        <p>${s.blurb}</p>
+        <div class="set-meta"><span>${count} MCQs · 60 min</span><span>Start →</span></div>
+      </article>
+    `;
+  }).join("");
   document.querySelectorAll(".set-card").forEach(el => {
-    el.addEventListener("click", () => startSet(Number(el.dataset.set)));
+    el.addEventListener("click", () => startSet(el.dataset.mode, Number(el.dataset.set)));
   });
 }
 
-function startSet(setId) {
-  const bank = (window.QUESTION_SETS && window.QUESTION_SETS[setId]) || [];
-  if (bank.length !== 100) {
+function startSet(mode, setId) {
+  const bank = mode === "real"
+    ? ((REAL_BANKS[setId] && REAL_BANKS[setId]()) || [])
+    : ((window.QUESTION_SETS && window.QUESTION_SETS[setId]) || []);
+  const expected = mode === "real" ? 1 : 100;
+  if (bank.length < expected || (mode === "mock" && bank.length !== 100)) {
     alert("Question bank is still loading or incomplete. Please refresh once.");
     return;
   }
+  state.mode = mode;
   state.setId = setId;
+  state.duration = mode === "real" ? REAL_DURATION_SEC : MOCK_DURATION_SEC;
+  state.passMark = +(bank.length * PASS_RATIO).toFixed(2);
   state.questions = bank.map(q => ({ ...q }));
-  state.answers = Array(100).fill(null);
+  state.answers = Array(bank.length).fill(null);
   state.current = 0;
-  state.remaining = DURATION_SEC;
+  state.remaining = state.duration;
   state.submitted = false;
   if (state.timerId) clearInterval(state.timerId);
   state.timerId = setInterval(tick, 1000);
@@ -64,10 +100,13 @@ function startSet(setId) {
   $("resultView").classList.add("hidden");
   $("examView").classList.remove("hidden");
   $("submitBtn").style.display = "";
-  $("examSet").textContent = setId;
+  $("examSet").textContent = mode === "real" ? `Real ${setId}` : setId;
+  $("examTotal").textContent = bank.length;
+  $("examTimer").textContent = formatTime(state.duration);
+  $("examTimer").classList.remove("warn", "danger");
   $("headerActions").innerHTML = `<button class="btn-ghost" id="quitBtn">Back to sets</button>`;
   $("quitBtn").onclick = () => {
-    if (confirm("Leave this mock test? Progress for this attempt will be lost.")) {
+    if (confirm("Leave this test? Progress for this attempt will be lost.")) {
       clearInterval(state.timerId);
       renderHome();
     }
@@ -127,18 +166,23 @@ function renderQuestion() {
   const explain = chosen == null ? "" : `
     <div class="explain">
       <h4>${chosen === q.answer ? "Correct" : "Incorrect"} — why this is the answer</h4>
-      <p>${q.explanation}</p>
+      <p>${q.explanation || ""}</p>
       ${q.example ? `<p><strong>Example:</strong> ${q.example}</p>` : ""}
     </div>`;
 
+  const kicker = q.chapter
+    ? `Chapter ${q.chapter}: ${q.chapterName} · ${q.topic}`
+    : (state.mode === "real" ? `Real QNA · Set ${state.setId}` : "");
+  const last = state.questions.length - 1;
+
   $("questionCard").innerHTML = `
-    <div class="q-kicker">Chapter ${q.chapter}: ${q.chapterName} · ${q.topic}</div>
+    ${kicker ? `<div class="q-kicker">${kicker}</div>` : ""}
     <p class="question">${q.q}</p>
     <div class="options">${optionsHtml}</div>
     ${explain}
     <div class="nav">
       <button class="btn-ghost" id="prevBtn" ${i === 0 ? "disabled" : ""}>Previous</button>
-      <button class="btn-primary" id="nextBtn">${i === 99 ? "Review last question" : "Next"}</button>
+      <button class="btn-primary" id="nextBtn">${i === last ? "Review last question" : "Next"}</button>
     </div>
   `;
 
@@ -150,7 +194,9 @@ function renderQuestion() {
     });
   });
   $("prevBtn").onclick = () => { if (state.current > 0) { state.current--; renderQuestion(); } };
-  $("nextBtn").onclick = () => { if (state.current < 99) { state.current++; renderQuestion(); } };
+  $("nextBtn").onclick = () => {
+    if (state.current < state.questions.length - 1) { state.current++; renderQuestion(); }
+  };
   const box = $("questionCard").querySelector(".explain");
   if (box) box.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
@@ -167,8 +213,9 @@ function submitTest(auto) {
   clearInterval(state.timerId);
   const correct = state.answers.filter((a, i) => a === state.questions[i].answer).length;
   const wrong = state.answers.filter((a, i) => a != null && a !== state.questions[i].answer).length;
+  const total = state.questions.length;
   const score = +(correct * 1 + wrong * -0.25).toFixed(2);
-  const passed = score >= PASS_MARK;
+  const passed = score >= state.passMark;
 
   const byChapter = {};
   state.questions.forEach((q, i) => {
@@ -180,10 +227,17 @@ function submitTest(auto) {
     else byChapter[key].wrong++;
   });
 
+  const hasChapters = state.questions.some(q => q.chapter);
   const rows = Object.entries(byChapter).map(([name, s]) => {
     const chScore = +(s.correct - 0.25 * s.wrong).toFixed(2);
     return `<tr><td>${name}</td><td>${s.total}</td><td>${s.correct}</td><td>${s.wrong}</td><td>${s.na}</td><td>${chScore}</td></tr>`;
   }).join("");
+  const chapterTable = hasChapters ? `
+      <table class="chapter-table">
+        <thead><tr><th>Chapter</th><th>Qs</th><th>Right</th><th>Wrong</th><th>NA</th><th>Net</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>` : "";
+  const paperName = state.mode === "real" ? `Real QNA Set ${state.setId}` : `Set ${state.setId}`;
 
   $("examView").classList.add("hidden");
   $("resultView").classList.remove("hidden");
@@ -191,17 +245,14 @@ function submitTest(auto) {
     <div class="result-card">
       <div class="${passed ? "pass" : "fail"}">${passed ? "PASS" : "FAIL"}</div>
       <div class="score-big">${score}</div>
-      <p>NISM scoring: +1 for correct, −0.25 for wrong, 0 for unanswered. Pass mark 60/100.</p>
+      <p>${paperName}. Scoring: +1 for correct, −0.25 for wrong, 0 for unanswered. Pass mark ${state.passMark} / ${total}.</p>
       <div class="score-grid">
         <div><b>${correct}</b><span>Correct × 1 = ${correct.toFixed(2)}</span></div>
         <div><b>${wrong}</b><span>Wrong × −0.25 = ${(wrong * -0.25).toFixed(2)}</span></div>
         <div><b>${unanswered}</b><span>Unanswered × 0 = 0.00</span></div>
-        <div><b>${score}</b><span>Net score / 100</span></div>
+        <div><b>${score}</b><span>Net score / ${total}</span></div>
       </div>
-      <table class="chapter-table">
-        <thead><tr><th>Chapter</th><th>Qs</th><th>Right</th><th>Wrong</th><th>NA</th><th>Net</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
+      ${chapterTable}
       <div class="nav" style="justify-content:center;margin-top:18px">
         <button class="btn-primary" id="reviewBtn">Review answers</button>
         <button class="btn-ghost" id="homeBtn">Choose another set</button>
@@ -222,11 +273,12 @@ document.addEventListener("keydown", (e) => {
   if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
   const map = { "1": 0, "2": 1, "3": 2, "4": 3, a: 0, b: 1, c: 2, d: 3 };
   const idx = map[e.key.toLowerCase()];
-  if (idx != null && state.answers[state.current] == null) {
+  const optionCount = state.questions[state.current] ? state.questions[state.current].options.length : 0;
+  if (idx != null && idx < optionCount && state.answers[state.current] == null) {
     state.answers[state.current] = idx;
     renderQuestion();
   } else if (e.key === "n" || e.key === "ArrowRight") {
-    if (state.current < 99) { state.current++; renderQuestion(); }
+    if (state.current < state.questions.length - 1) { state.current++; renderQuestion(); }
   } else if (e.key === "p" || e.key === "ArrowLeft") {
     if (state.current > 0) { state.current--; renderQuestion(); }
   }
