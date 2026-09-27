@@ -34,12 +34,26 @@
         </div>
       </div>
       <div class="sets" id="setGrid"></div>
+
+      <div class="hero section-gap">
+        <h2>Pass4Sure Mock Test</h2>
+        <p>
+          Five sets transcribed from the sample quiz recordings. Each set has 50 questions and a one-hour timer.
+        </p>
+        <div class="rules">
+          <div class="rule"><b>50</b><span>Questions × 1 mark</span></div>
+          <div class="rule"><b>−0.25</b><span>Negative mark for each wrong answer</span></div>
+          <div class="rule"><b>30</b><span>Passing score out of 50</span></div>
+          <div class="rule"><b>60 min</b><span>Time for each set</span></div>
+        </div>
+      </div>
+      <div class="sets" id="realGrid"></div>
     </section>
 
     <section id="examView" class="hidden">
       <div class="exam-top">
         <div class="pill">Set <strong id="examSet"></strong></div>
-        <div class="pill">Q <strong id="examQNo"></strong> / 100</div>
+        <div class="pill">Q <strong id="examQNo"></strong> / <strong id="examTotal"></strong></div>
         <div class="pill timer" id="examTimer">02:00:00</div>
         <div class="pill">Keys 1–4 answer · N next · P previous</div>
         <button class="btn-danger" id="submitBtn">Submit test</button>
@@ -57,6 +71,11 @@
   </div>
 
   <script src="js/questions.js"></script>
+  <script src="js/set_01_video.js"></script>
+  <script src="js/set_02_video.js"></script>
+  <script src="js/set_03_video.js"></script>
+  <script src="js/set_04_video.js"></script>
+  <script src="js/set_05_video.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
