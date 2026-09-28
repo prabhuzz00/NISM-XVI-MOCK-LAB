@@ -27,7 +27,7 @@ window.SET_04_VIDEO = [
   },
   {
     "id": 3,
-    "q": "If a new a new short futures position is taken during the day and if the clearing price at the end of the day is higher than the transaction price, (u",
+    "q": "If a new a new short futures position is taken during the day and if the clearing price at the end of the day is higher than the transaction price",
     "options": [
       "the seller has made a Mark to Market (MTM) profit",
       "the buyer has made a Mark to Market (MTM) loss",
@@ -54,10 +54,11 @@ window.SET_04_VIDEO = [
     "q": "In Exchange traded gold futures, the price is calculated on the basis of .995 purity. What would be the price to be paid to a seller if he delivers a higher .999 purity gold instead of .995 purity?",
     "options": [
       "Contract rate * 995/999",
+      "Contract rate * 999/995",
       "Contract rate * 0.999",
       "No extra price will be paid"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "If the Seller gives delivery of .999 purity, he will get a proportionate premium and sale proceeds will be calculated as under: Rate of delivery ie. Contract Rate X 999/ 995 If the quality is less than 995, it is rejected."
   },
   {
@@ -66,7 +67,7 @@ window.SET_04_VIDEO = [
     "options": [
       "Moneyness of an Option",
       "Time value",
-      "Put-Call Parity Theorem (3",
+      "Put-Call Parity Theorem",
       "Volatility"
     ],
     "answer": 2,
@@ -76,9 +77,10 @@ window.SET_04_VIDEO = [
     "id": 7,
     "q": "Mr. A sold a Gold call option of strike price Rs. 40,000 (per 10 grams) for a premium of Rs. 600 (per 10 grams). The lot size is 1 Kg. This option expired at a settlement price of Rs. 42000 per 10 grams. Calculate the profit or loss to Mr. A on this position. (Do not consider any tax or transaction costs)",
     "options": [
-      "Profit of Rs.",
+      "Profit of Rs. 20,000",
       "Loss of Rs. 20,000",
-      "Loss of Rs. i)"
+      "Loss of Rs. 1,40,000",
+      "Profit of Rs. 2,80,000"
     ],
     "answer": 2,
     "explanation": "Rs.40000 to Rs. 42000. This means there is a loss of Rs. 2000. He has however earned a premium of Rs.600. so his net loss is Rs. 2000 - Rs. 600 = Rs. 1400 Selling a call option means the view is bearish (price to fall). Mr. A has sold a call option but the price has risen from"
@@ -87,13 +89,13 @@ window.SET_04_VIDEO = [
     "id": 8,
     "q": "Which of these indicates \"weakening of basis\"?",
     "options": [
-      "Change of basis from -70 Rupees to -60 Rupees (D Change of basis from -70 Rupees to +70 Rupees",
+      "Change of basis from -70 Rupees to -60 Rupees",
+      "Change of basis from -70 Rupees to +70 Rupees",
       "Change of basis from +70 Rupees to +60 Rupees",
-      "Perishable agricultural commodities",
-      "Commodities resulted from mining activities"
+      "Change of basis from +70 Rupees to +80 Rupees"
     ],
-    "answer": 0,
-    "explanation": ""
+    "answer": 2,
+    "explanation": "Weakening of basis means the basis is decreasing. So, the correct option is Change of basis from +70 Rupees to +60 Rupees."
   },
   {
     "id": 9,
@@ -105,11 +107,11 @@ window.SET_04_VIDEO = [
       "Both 2 and 3"
     ],
     "answer": 3,
-    "explanation": "There are two main types of commodities that trade in the spot and derivatives markets: - Hard commodities: These are natural resources that are mined or processed such as the crude oil, gold, silver, etc. soybean, etc."
+    "explanation": "There are two main types of commodities that trade in the spot and derivatives markets: - Hard commodities: These are natural resources that are mined or processed such as the crude oil, gold, silver, etc. - Soft commodities: These are perishable agricultural products such as corn, wheat, coffee, cocoa, sugar and soybean."
   },
   {
     "id": 10,
-    "q": "The orders received on an Indian derivative exchange are first ranked according to their ______ and then on",
+    "q": "The orders received on an Indian derivative exchange are first ranked according to their ______ and then on ______.",
     "options": [
       "Amount , Time",
       "Time , Prices",
@@ -117,16 +119,16 @@ window.SET_04_VIDEO = [
       "Prices , Time"
     ],
     "answer": 3,
-    "explanation": "All the orders received are sorted on 'best-price' basis i.e., orders are first ranked according to their prices and similar priced orders are then sorted on a time-priority basis (i.e., the order that comes in early gets priority over the later order). For eg. if there are three BUY orders at Rs 100, Rs 101 and Rs 99, the buy order at Rs 101 will be ranked first and then Rs 100 and Rs 99 orders. If there are two buy orders at Rs 101 , then the order received first (time basis) will be ranked fi"
+    "explanation": "All the orders received are sorted on 'best-price' basis i.e., orders are first ranked according to their prices and similar priced orders are then sorted on a time-priority basis (i.e., the order that comes in early gets priority over the later order). For eg. if there are three BUY orders at Rs 100, Rs 101 and Rs 99, the buy order at Rs 101 will be ranked first and then Rs 100 and Rs 99 orders. If there are two buy orders at Rs 101 , then the order received first (time basis) will be ranked first."
   },
   {
     "id": 11,
-    "q": "Mr. Sunil is long on a put option. He has a (3",
+    "q": "Mr. Sunil is long on a put option. He has a ______.",
     "options": [
-      "Right to buy, without an obligation to buy",
+      "Right to buy, with an obligation to buy",
       "Right to sell, without an obligation to sell",
       "Right to buy, without an obligation to buy",
-      "Right to buy, without an obligation to buy CD Right to sell with an obligation to sell"
+      "Right to sell, with an obligation to sell"
     ],
     "answer": 1,
     "explanation": "Put option contracts give the buyer the right to sell a specified quantity of an asset at a particular price on or before a certain future date. Since the buyer is paying the premium to the seller, he has the right to exercise the option when it is favourable to him but no obligation to do so."
@@ -135,17 +137,17 @@ window.SET_04_VIDEO = [
     "id": 12,
     "q": "Which statement is true about Commodities Transaction Tax (CTT)?",
     "options": [
-      "CTT applies to sale transactions of commodity futures, except exempted agricultural commodities",
+      "CTT applies to sale transactions of commodity futures, except for exempted agricultural commodities",
       "CTT applies to purchase transactions of commodity futures, except exempted agricultural commodities",
-      "CTT applies to both purchase and sale of commodity futures, except exempted agricultural commodities",
-      "CTT applies to both purchase and sale of commodity futures"
+      "CTT applies to both purchase and sale transactions of commodity futures, except for exempted agricultural commodities",
+      "CTT applies to both purchase and sale transactions of commodity futures"
     ],
     "answer": 0,
     "explanation": "CTT is charged on sale transactions of commodity futures, other than exempted agricultural commodities. It is determined at the end of each trading day."
   },
   {
     "id": 13,
-    "q": "Generally the futures prices price broadly follow the price movement of the underlying asset. However sometimes, the two prices may not always vary by the same degree and this will lead to",
+    "q": "Generally the futures prices price broadly follow the price movement of the underlying asset. However sometimes, the two prices may not always vary by the same degree and this will lead to ______.",
     "options": [
       "Delta Risk",
       "Basis Risk",
@@ -244,7 +246,7 @@ window.SET_04_VIDEO = [
     "q": "As per accounting terminology, ______ is the price received for selling an asset or the price paid for transferring a liability in an arms-length transaction between knowledgeable and willing counterparties.",
     "options": [
       "Market Value",
-      "Real",
+      "Real Value",
       "Fair Value",
       "Intrinsic Value"
     ],
@@ -337,7 +339,7 @@ window.SET_04_VIDEO = [
   },
   {
     "id": 29,
-    "q": "______ have to be executed on the same trading day that they are entered. If these orders do not get executed that day, they expire or are automatically cancelled by the exchange. c,",
+    "q": "______ have to be executed on the same trading day that they are entered. If these orders do not get executed that day, they expire or are automatically cancelled by the exchange.",
     "options": [
       "Limit Orders",
       "Immediate or Cancel (IOC) order",
@@ -385,7 +387,7 @@ window.SET_04_VIDEO = [
   },
   {
     "id": 33,
-    "q": "Spot market trade in commodities particularly agriculture commodities fall under the jurisdiction of U",
+    "q": "Spot market trade in commodities particularly agriculture commodities fall under the jurisdiction of ______.",
     "options": [
       "Central government",
       "Local bodies such as municipalities and gram panchayats",
@@ -397,9 +399,9 @@ window.SET_04_VIDEO = [
   },
   {
     "id": 34,
-    "q": "Which of the following are the risks generally faced by the Commodity exporters ? c,",
+    "q": "Which of the following are the risks generally faced by the Commodity exporters ?",
     "options": [
-      "Foreign exchange rate risk C),",
+      "Foreign exchange rate risk",
       "Geopolitical risk",
       "Commodity price risk",
       "All of the above risks"
@@ -449,10 +451,11 @@ window.SET_04_VIDEO = [
     "options": [
       "When the order price is decreased",
       "When the order quantity is decreased",
+      "When the order price is increased",
       "Time priority of an order will remain the same irrespective of any modifications done to that order"
     ],
     "answer": 1,
-    "explanation": "Time priority for an order modification will not change due to decrease in its quantity or decrease in"
+    "explanation": "Time priority for an order modification will not change due to decrease in its quantity or decrease in disclosed quantity. It will change in other cases."
   },
   {
     "id": 39,
@@ -464,11 +467,11 @@ window.SET_04_VIDEO = [
       "Trading cum clearing member"
     ],
     "answer": 0,
-    "explanation": ""
+    "explanation": "A professional clearing member is a clearing member who is not a trading member. typically banks and custodians become professional clearing members and clear and settle trades for their trading members."
   },
   {
     "id": 40,
-    "q": "A commodity Put option has a strike price of Rs 1500 and the current market price of the underlying commodity futures is Rs 1400 and the option premium is Rs 250. What is its TIME VALUE? ORs. 100 (DRS. 150",
+    "q": "A commodity Put option has a strike price of Rs 1500 and the current market price of the underlying commodity futures is Rs 1400 and the option premium is Rs 250. What is its TIME VALUE?",
     "options": [
       "Rs. 100",
       "Rs. 150",
@@ -496,6 +499,7 @@ window.SET_04_VIDEO = [
     "options": [
       "Tick size is represented in terms of quantity whereas Lot size is represented in terms of value",
       "Tick size is represented in terms of price whereas Lot size is represented in terms of quantity",
+      "Tick size is represented in terms of stress loss whereas Lot size is represented in terms of quantity",
       "Tick size is represented in terms of quantity whereas Lot size is represented in terms of price"
     ],
     "answer": 1,
@@ -527,10 +531,10 @@ window.SET_04_VIDEO = [
   },
   {
     "id": 45,
-    "q": "With the help of derivatives, volatility risks can be transferred from ______ to",
+    "q": "With the help of derivatives, volatility risks can be transferred from ______ to ______.",
     "options": [
       "Hedgers to Arbitrageurs",
-      "Hedgers to Speculators a",
+      "Hedgers to Speculators",
       "Speculators to Hedgers",
       "Arbitrageurs to Hedgers"
     ],
@@ -539,7 +543,7 @@ window.SET_04_VIDEO = [
   },
   {
     "id": 46,
-    "q": "The Indian Commodity Exchange indices are c,",
+    "q": "The Indian Commodity Exchange indices are ______.",
     "options": [
       "Free Float based indices",
       "MSP value based indices",
@@ -547,7 +551,7 @@ window.SET_04_VIDEO = [
       "Price based indices"
     ],
     "answer": 3,
-    "explanation": "commodities are determined in Index, then, index will capture only price movements. Weight ______ of securities will remain the same unless it is separately rebalanced at the end of 12 months."
+      "explanation": "If commodities are determined in Index, then, index will capture only price movements. Weight of commodities will remain the same unless it is separately rebalanced at the end of 12 months."
   },
   {
     "id": 47,
@@ -578,12 +582,12 @@ window.SET_04_VIDEO = [
     "q": "The closing price for Nickel futures contract was Rs. 900 yesterday and Daily Price Range is 5 percent as per the contract specification. What would be the price range for this contract today?",
     "options": [
       "Rs. 825 to Rs.965",
-      "Rs. 855 to Rs.945 a",
+      "Rs. 855 to Rs.945",
       "Rs. 805 to Rs.905",
       "Rs. 865 to Rs.935"
     ],
     "answer": 1,
-    "explanation": "The Daily Price Range is 5%. 5% of Rs. 900 is Rs. 45 So the price range will be 900 - 45 and 900 + 45 ______ = Rs. 855 to Rs.945"
+    "explanation": "The Daily Price Range is 5%. 5% of Rs. 900 is Rs. 45 So the price range will be 900 - 45 and 900 + 45 = Rs. 855 to Rs.945"
   },
   {
     "id": 50,

@@ -63,7 +63,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 6,
-    "q": "A futures contract is a legally binding agreement between the buyer and the seller, entered on an exchange, to buy or sell a specified amount of an asset, at a certain time in the future, for a price that is 4)",
+    "q": "A futures contract is a legally binding agreement between the buyer and the seller, entered on an exchange, to buy or sell a specified amount of an asset, at a certain time in the future, for a price that is __________.",
     "options": [
       "agreed at the time of entering into the contract",
       "present when the contract matures",
@@ -103,29 +103,32 @@ window.SET_03_VIDEO = [
     "options": [
       "Long position in the underlying physical commodity",
       "Long position in the underlying commodity futures",
+      "Short position in the underlying physical commodity",
       "Short position in the underlying commodity futures"
     ],
-    "answer": 2,
-    "explanation": "Put 0Dtion. it m ______ e s bear When a Derson When a person buys a Put option, it means he is bearish on the commodity. On exercise, the commodity options devolve into commodity futures in India. ______ So, this means on exercise the long PUT option will be short position (bearish) in underlying commodity futures. Commodity options in India devolve into Commodity Futures. That means, buyers of commodity options would get a right to have a position in underlying commodity futures."
+    "answer": 3,
+    "explanation": "When a person buys a Put option, it means he is bearish on the commodity. On exercise, the commodity options devolve into commodity futures in India. So, this means on exercise the long PUT option will be short position (bearish) in underlying commodity futures."
   },
   {
     "id": 10,
     "q": "Mr. Shetty has a long call option and would like to close that position before expiry. How would he do that?",
     "options": [
       "By selling a call option or by selling a put option of the same strike and same expiry",
+      "By selling a call option or by buying a put option of the same strike and same expiry",
       "By selling a call option of the same strike and same expiry",
       "By buying a put option of the same strike and same expiry"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "A bought CALL option can only be squared up by selling the same CALL option."
   },
   {
     "id": 11,
-    "q": "Mr. Suresh has entered a short speculative position in commodity futures. Which of the following would be a possible outcome for Mr. Suresh at the expiry of the contract? c,",
+    "q": "Mr. Suresh has entered a short speculative position in commodity futures. Which of the following would be a possible outcome for Mr. Suresh at the expiry of the contract?",
     "options": [
       "Even if the future prices rises or falls, Mr. Suresh will always make a profit",
       "Mr. Suresh will not make any profit or loss for any price fluctuations of futures contract",
-      "Mr. Suresh makes a profit if the price of futures contract decreases"
+      "Mr. Suresh makes a profit if the price of futures contract decreases",
+      "Mr. Suresh makes a profit if the price of futures contract increases"
     ],
     "answer": 2,
     "explanation": "Short position means Mr. Suresh has sold the futures contract expecting the prices to fall. He can only make a profit if the futures prices fall. For eg. Mr. Suresh sells a futures contract at Rs 100. The price falls and on expiry the price is Rs. 90. Here he will make a profit of Rs. 10."
@@ -195,7 +198,7 @@ window.SET_03_VIDEO = [
     "q": "Which of these factor(s) affect the premium / price of options?",
     "options": [
       "Volatility of the underlying asset's price",
-      "Strike price of the option (2,",
+      "Strike price of the option",
       "Interest rates",
       "All of the above"
     ],
@@ -204,7 +207,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 18,
-    "q": "In which way an option position can be closed? (J'",
+    "q": "In which way an option position can be closed?'",
     "options": [
       "Expiration",
       "Exercise",
@@ -228,7 +231,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 20,
-    "q": "The clearing corporation computes and advises the clearing member's obligation and the clearing member makes funds available in the clearing account for the ______ and receives funds in case of a",
+    "q": "The clearing corporation computes and advises the clearing member's obligation and the clearing member makes funds available in the clearing account for the ______ and receives funds in case of a ______.",
     "options": [
       "funds-in , funds-out",
       "pay-out , pay-in",
@@ -252,11 +255,12 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 22,
-    "q": "How is the Mark-to-Market Margin calculated for carry forward futures positions from previous day? C'",
+    "q": "How is the Mark-to-Market Margin calculated for carry forward futures positions from previous day?",
     "options": [
       "By taking the difference between the closing price of a contract on that particular day and the price at which the trade was initiated",
       "By taking the difference between the closing price of a contract on that particular day and its previous day's closing price",
-      "By taking the difference between the closing price of a contract on that particular day which is"
+      "By taking the difference between the closing price of a contract on that particular day which is calculated as per the continuous compounding method and the price at which the trade was initiated",
+      "By taking the difference between the closing price in the spot market on that particular day and the price at which the trade was initiated"
     ],
     "answer": 1,
     "explanation": "There are two types of positions on which Mark to Market margin is calculated - 1. New Positions of that day and 2. For carry forward positions. Mark-to-market (MTM) margin is calculated on each trading day by taking the difference between the closing price"
@@ -266,23 +270,23 @@ window.SET_03_VIDEO = [
     "q": "What will be the effect of LOWER INTEREST RATES in an economy on the internationally traded commodities prices in domestic terms?",
     "options": [
       "Lower interest rates could reduce the market prices of commodities",
+      "Lower interest rates could increase the market prices of commodities",
       "Can increase or decrease the prices depending on the local gold prices",
-      "Interest rates have no effect on commodity prices",
-      "Lower interest rates could reduce the market prices of commodities (D Lower interest rates could increase the market prices of commodities"
+      "Interest rates have no effect on commodity prices"      
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "Interest rates impact the commodity prices and are the key determinants in commodity price movements. A decrease in real interest rates lowers the cost of carrying inventories, and raising commodity prices. Lower interest rates decrease the incentive to extract mine-based commodities, increase the incentives to maintain inventories, and stimulate the demand for commodity derivatives, all of which raise the prices of basic commodities."
   },
   {
     "id": 24,
-    "q": "Sumeet has taken a short position in Copper futures in the contracts expiring in April. What view does he have on the Copper future prices? (J",
+    "q": "Sumeet has taken a short position in Copper futures in the contracts expiring in April. What view does he have on the Copper future prices?",
     "options": [
-      "Sumeet is expecting the Copper prices to go up in April IP Sumeet is expecting the Copper prices to go down in April",
+      "Sumeet is expecting the Copper prices to go up in April",
+      "Sumeet is expecting the Copper prices to go down in April",
       "Sumeet is expecting the Copper prices to remain range bound",
-      "Sumeet is expecting the Copper prices to remain flat till April",
-      "Sumeet is expecting the Copper prices to go up in April"
+      "Sumeet is expecting the Copper prices to remain flat till April"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "Selling futures is often called \"going short,\" or establishing a short position. Since he has sold the futures, which means he is expecting the Copper prices to fall so that he can buy the contract back at a lower price and make profits."
   },
   {
@@ -343,7 +347,7 @@ window.SET_03_VIDEO = [
       "a market order"
     ],
     "answer": 3,
-    "explanation": ""
+    "explanation": "In a market order, the trade is executed at the immediately available current market price, prevailing at the time of placing the order."
   },
   {
     "id": 30,
@@ -359,7 +363,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 31,
-    "q": "As per the definition of securities under Securities Contract Regulation Act 1956, which of the following does NOT fall under the definition of \"Securities\"? (3",
+    "q": "As per the definition of securities under Securities Contract Regulation Act 1956, which of the following does NOT fall under the definition of \"Securities\"?",
     "options": [
       "Commodity Derivatives",
       "Electronic Gold Receipt",
@@ -387,7 +391,7 @@ window.SET_03_VIDEO = [
     "options": [
       "Position limits violation",
       "Financial Intelligence Unit",
-      "In-person verification c,",
+      "In-person verification",
       "Suspicious Transaction Reporting"
     ],
     "answer": 0,
@@ -395,13 +399,14 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 34,
-    "q": "A Bull Spread is considered as a type of",
+    "q": "A Bull Spread is considered as a type of ______ .",
     "options": [
       "Inter commodity spread",
+      "Intra commodity spread",
       "Arbitrage spread",
       "Reverse cash and carry arbitrage"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "An intra-commodity spread is made up of a long position in futures contract and a short position in another month contract of the same underlying or another contract of the same commodity with different lot size. In a bull spread, the investor buys a lower strike and sells the higher strike of the same commodity. It attempts to profit from the directional movement in the underlying commodity."
   },
   {
@@ -433,7 +438,7 @@ window.SET_03_VIDEO = [
     "q": "Which of the following is true?",
     "options": [
       "Index Futures are based on underlying which is a Futures devolving on spot commodity",
-      "Index Futures are based on underlying which is a continuous series based on Commodity Futures (0,",
+      "Index Futures are based on underlying which is a continuous series based on Commodity Futures",
       "Commodity Indices are based on underlying which devolves on commodity Futures",
       "Index is a derivative trading product"
     ],
@@ -442,7 +447,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 38,
-    "q": "From the options given below, identify the term which is not related to commodity derivatives trading? 10 Limit Order c,",
+    "q": "From the options given below, identify the term which is not related to commodity derivatives trading?",
     "options": [
       "Limit Order",
       "Maximum Order Quantity",
@@ -468,7 +473,7 @@ window.SET_03_VIDEO = [
     "id": 40,
     "q": "Following the Price-Time priority in order execution, which of these changes in an order will lead to its later execution?",
     "options": [
-      "When the Sell order price is reduced (0,",
+      "When the Sell order price is reduced",
       "When the Buy order price is increased",
       "When the Buy order price is reduced",
       "When the Stop-Loss level is changed"
@@ -478,7 +483,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 41,
-    "q": "What is the difference between a Stop Loss order and a Limit order? c,",
+    "q": "What is the difference between a Stop Loss order and a Limit order?",
     "options": [
       "Basically, a Stop loss level is just trigger for sending order while a Limit order is already sent",
       "For a Limit order to be executed, a Stop loss triggers is to be set",
@@ -574,7 +579,7 @@ window.SET_03_VIDEO = [
   },
   {
     "id": 49,
-    "q": "The spot price of a commodity is Rs. 20000. The time period is 180 days. Interest rate is 7% and storage cost is I %. What will be the theoretical future price?",
+    "q": "The spot price of a commodity is Rs. 20000. The time period is 180 days. Interest rate is 7% and storage cost is 1%. What will be the theoretical future price?",
     "options": [
       "Rs. 20520.85",
       "Rs. 21236.27",

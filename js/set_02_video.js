@@ -115,7 +115,7 @@ window.SET_02_VIDEO = [
     "options": [
       "Rs. 41900",
       "Rs. 42500",
-      "Rs. 421 OO",
+      "Rs. 42100",
       "Rs. 41600"
     ],
     "answer": 3,
@@ -159,7 +159,7 @@ window.SET_02_VIDEO = [
   },
   {
     "id": 14,
-    "q": "______ can be generated because of the benefit from ownership of a physical asset U",
+    "q": "______ can be generated because of the benefit from ownership of a physical asset",
     "options": [
       "Premium Yield",
       "Spot Yield",
@@ -183,10 +183,10 @@ window.SET_02_VIDEO = [
   },
   {
     "id": 16,
-    "q": "Fair Value of the Futures Contract = Spot Price +",
+    "q": "Fair Value of the Futures Contract = Spot Price + _________ .",
     "options": [
       "Strike Price",
-      "Premium e)",
+      "Premium",
       "Cost of Carry",
       "Impact cost"
     ],
@@ -222,10 +222,11 @@ window.SET_02_VIDEO = [
     "q": "Identify the true statement with respect to the relation between Strike Price and Option Premium. (Assume all other factors remain the same)",
     "options": [
       "Call options with higher strike price would have a higher option premium",
+      "Call options with lower strike price would have a higher option premium",
       "All call options will have the same option premium",
       "For a given strike price, the premium of call option and put options will be the same"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "Option premium consists Intrinsic value + Time value Intrinsic value is the excess of spot price over the strike price. So if the strike price is lower, the intrinsic value will be higher leading to higher option premium."
   },
   {
@@ -266,10 +267,11 @@ window.SET_02_VIDEO = [
   },
   {
     "id": 23,
-    "q": "Arvind has a physical exposure of 500 kilograms to the underlying commodity and the lot size of the futures contract on this underlying is I O kilograms. The hedge ratio between the spot and futures price is 0.80. Calculate how many futures contract he should trade to set up an optimal hedge?",
+    "q": "Arvind has a physical exposure of 500 kilograms to the underlying commodity and the lot size of the futures contract on this underlying is 10 kilograms. The hedge ratio between the spot and futures price is 0.80. Calculate how many futures contract he should trade to set up an optimal hedge?",
     "options": [
       "80",
       "40",
+      "8",
       "25"
     ],
     "answer": 1,
@@ -325,7 +327,7 @@ window.SET_02_VIDEO = [
   },
   {
     "id": 28,
-    "q": "Calculate the Tick Value of a Silver Futures contract if the Quotation factor for Silver is 'Rupees per I Kilogram', lot size for regular Silver contract = 40 kg and tick size is Rs. I.",
+    "q": "Calculate the Tick Value of a Silver Futures contract if the Quotation factor for Silver is 'Rupees per 1 Kilogram', lot size for regular Silver contract = 40 kg and tick size is Rs. 1.",
     "options": [
       "Rs 400",
       "Rs 40",
@@ -508,22 +510,23 @@ window.SET_02_VIDEO = [
     "q": "Why are indices constructed?",
     "options": [
       "To create a proxy of Economy",
-      "To create a proxy of GDP IVO •o create a proxy of Technical charts",
+      "To create a proxy of GDP IVO",
+      "To create a proxy of Technical charts",
       "To create a proxy of Market"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "Indices are constructed to create a proxy of market representation so that the index return could be considered as"
   },
   {
     "id": 44,
-    "q": "Price discovery is basically the process of determining commodity price through OA polling mechanism which is approved by SEBI",
+    "q": "Price discovery is basically the process of determining commodity price through ___ .",
     "options": [
+      "A polling mechanism which is approved by SEBI",
       "The forces of market demand and supply",
       "A formula specified by the Exchange",
-      "Random sampling of prices",
-      "The forces of market demand and supply OA formula specified by the Exchange"
+      "Random sampling of prices"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "Price discovery in spot markets refers to the process of determining commodity price through forces of market demand and supply."
   },
   {
@@ -566,7 +569,7 @@ window.SET_02_VIDEO = [
     "id": 48,
     "q": "Which of these fees / taxes is NOT applicable in case of commodity derivatives?",
     "options": [
-      "SEBI's turnover fees e;",
+      "SEBI's turnover fees",
       "Securities Transaction Tax",
       "Commodities Transaction Tax",
       "Goods and Services tax (GST)"
@@ -576,7 +579,7 @@ window.SET_02_VIDEO = [
   },
   {
     "id": 49,
-    "q": "______ can be accredited with more than one Clearing Corporation but the same ______ cannot be utilized by more than one Clearing Corporation for the same commodity. e",
+    "q": "A ______ can be accredited with more than one Clearing Corporation but the same ______ cannot be utilized by more than one Clearing Corporation for the same commodity.",
     "options": [
       "Storage Facility , Warehouse Service Provider",
       "Commodity Broker , Warehouse Service Provider",
